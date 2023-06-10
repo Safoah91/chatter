@@ -3,7 +3,7 @@ const About = () => {
     <>
       <section
         id="about"
-        className="max-w-[90rem] px- mx-auto md:flex md:gap-20 py-24"
+        className="max-w-[90rem] mx-auto md:flex md:gap-20 py-24"
       >
         <article className="w-[60%]">
           <h2 className="text-5xl font-bold">About Chatter</h2>
