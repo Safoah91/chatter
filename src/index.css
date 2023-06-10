@@ -9,7 +9,7 @@ body {
 }
 
 section#hero {
-  background: url(./../public/assets/hero.jpg);
+  background: url(./../public/assets/images/hero.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
