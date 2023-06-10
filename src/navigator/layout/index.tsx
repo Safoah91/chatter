@@ -4,7 +4,7 @@ import { Link, Outlet } from "react-router-dom";
 const Layout = () => {
   return (
     <>
-      <header className="bg-white max-w-[90rem] mx-auto py-5">
+      <header className="bg-white max-w-[82rem] mx-auto py-5">
         <nav className="flex justify-between items-center">
           <div className="text-blue500 text-5xl font-bold">CHATTER</div>
           <ul className="flex justify-between gap-1">
@@ -51,17 +51,17 @@ const Layout = () => {
         <Outlet />
       </main>
       <footer className="bg-lightYellow pt-9 pb-24">
-        <div className="max-w-[90rem] mx-auto">
+        <div className="max-w-[82rem] mx-auto">
           <nav className="flex justify-between items-start">
             <div className="text-blue500 text-5xl font-bold">CHATTER</div>
             <ul className="flex flex-col gap-1">
-              <li className="pb-4">
+              <li className="pb-6">
                 <h3 className="text-2xl font-medium">Explore</h3>
               </li>
               <li>
                 <Link
                   to="/"
-                  className="text-bas text-gray-600 py-2 hover:text-gray-500 transition-all duration-300"
+                  className="text-lg text-gray-600 py-2 hover:text-gray-500 transition-all duration-300"
                 >
                   Community
                 </Link>
@@ -69,7 +69,7 @@ const Layout = () => {
               <li>
                 <Link
                   to="/about"
-                  className="text-base text-gray-600 py-2 hover:text-gray-500 transition-all duration-300"
+                  className="text-lg text-gray-600 py-2 hover:text-gray-500 transition-all duration-300"
                 >
                   Trending blogs
                 </Link>
@@ -77,20 +77,20 @@ const Layout = () => {
               <li>
                 <Link
                   to="/contact"
-                  className="text-ba py-2 text-gray-600 hover:text-gray-500 transition-all duration-300"
+                  className="text-lg py-2 text-gray-600 hover:text-gray-500 transition-all duration-300"
                 >
                   Chatter for teams
                 </Link>
               </li>
             </ul>
             <ul className="flex flex-col gap-1">
-              <li className="pb-4">
+              <li className="pb-6">
                 <h3 className="text-2xl font-medium">Support</h3>
               </li>
               <li>
                 <Link
                   to="/"
-                  className="text-bas text-gray-600 py-2 hover:text-gray-500 transition-all duration-300"
+                  className="text-lg text-gray-600 py-2 hover:text-gray-500 transition-all duration-300"
                 >
                   Support docs
                 </Link>
@@ -98,7 +98,7 @@ const Layout = () => {
               <li>
                 <Link
                   to="/"
-                  className="text-base text-gray-600 py-2 hover:text-gray-500 transition-all duration-300"
+                  className="text-lg text-gray-600 py-2 hover:text-gray-500 transition-all duration-300"
                 >
                   Join slack
                 </Link>
@@ -106,20 +106,20 @@ const Layout = () => {
               <li>
                 <Link
                   to="/contact"
-                  className="text-ba py-2 text-gray-600 hover:text-gray-500 transition-all duration-300"
+                  className="text-lg py-2 text-gray-600 hover:text-gray-500 transition-all duration-300"
                 >
                   Contact
                 </Link>
               </li>
             </ul>
             <ul className="flex flex-col gap-1">
-              <li className="pb-4">
+              <li className="pb-6">
                 <h3 className="text-2xl font-medium">Official blog</h3>
               </li>
               <li>
                 <Link
                   to="/"
-                  className="text-bas text-gray-600 py-2 hover:text-gray-500 transition-all duration-300"
+                  className="text-lg text-gray-600 py-2 hover:text-gray-500 transition-all duration-300"
                 >
                   Official blog
                 </Link>
@@ -127,7 +127,7 @@ const Layout = () => {
               <li>
                 <Link
                   to="/"
-                  className="text-base text-gray-600 py-2 hover:text-gray-500 transition-all duration-300"
+                  className="text-lg text-gray-600 py-2 hover:text-gray-500 transition-all duration-300"
                 >
                   Engineering blog
                 </Link>

@@ -4,7 +4,7 @@ const Testimonies = () => {
   return (
     <>
       <section id="about" className="bg-lightYellow py-24">
-        <div className="max-w-[90rem] mx-auto md:flex md:gap-20">
+        <div className="max-w-[82rem] mx-auto md:flex md:gap-20">
           <article className="w-[25%] rounded-full">
             <img
               src="/assets/images/testimony.png"
