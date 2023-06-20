@@ -5,6 +5,7 @@
 @tailwind utilities;
 
 body {
+  overflow-x: hidden;
   font-family: 'DM Sans', sans-serif;
 }
 
@@ -16,6 +17,18 @@ section#hero {
 }
 
 section#hero #overlay {
+  background: #00000065;
+
+}
+
+section#authLayout {
+  background: url(./../public/assets/images/hero.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+section#authLayout #overlay {
   background: #00000065;
 
 }

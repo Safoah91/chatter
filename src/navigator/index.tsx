@@ -7,6 +7,7 @@ import Layout from "./layout";
 import Contact from "pages/contact";
 import Blogs from "pages/blogs";
 import AboutUs from "pages/aboutUs";
+import Confirmation from "pages/auth/confirmation";
 
 const router = createBrowserRouter([
   {},
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/confirmation",
+    element: <Confirmation />,
   },
 ]);
 

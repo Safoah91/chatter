@@ -5,9 +5,13 @@ const Button = ({ text, type, link }: ButtonProps) => {
   return (
     <>
       {type === "primary" ? (
-        <button className="border border-blue500 bg-blue500 text-white rounded-md text-base font-bold px-8 py-2.5 hover:border-blue500 hover:bg-white hover:text-gray-700 transition-all duration-300"></button>
+        <button className="w-full border  bg-blue500 text-white rounded-md text-base font-bold px-8 py-2.5   hover:text-gray-300 hover:bg-blue500/90 transition-all duration-300">
+          {text}
+        </button>
       ) : type === "secondary" ? (
-        <button className="border border-blue500 rounded-md text-base font-bold px-8 py-2.5 hover:bg-blue500 hover:text-white transition-all duration-300"></button>
+        <button className="border border-blue500 rounded-md text-base font-bold px-8 py-2.5 hover:bg-blue500 hover:text-white transition-all duration-300">
+          {text}
+        </button>
       ) : type === "primary-link" ? (
         <Link
           to={`${link}`}
