@@ -1,5 +1,5 @@
 import axios from "axios";
-// import { Auth } from "configs/auth";
+import { Auth } from "configs/auth";
 
 //apply base url for axios
 const API_URL = process.env.REACT_APP_URI;
@@ -8,27 +8,27 @@ export const axiosApi = axios.create({
   baseURL: API_URL,
 });
 
-// axiosApi.interceptors.request.use(
-//   async (config) => {
-//     config.headers["Authorization"] = `Bearer ` + Auth.getToken();
-//     return config;
-//   },
-//   (error) => {
-//     return Promise.reject(error);
-//   }
-// );
+axiosApi.interceptors.request.use(
+  async (config) => {
+    config.headers["Authorization"] = `Bearer ` + Auth.getToken();
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
-// axiosApi.interceptors.response.use(
-//   (response) => {
-//     return response;
-//   },
-//   (error) => {
-//     if (error && error.response && error.response.status === 401) {
-//       localStorage?.clear();
-//     }
-//     return Promise.reject(error);
-//   }
-// );
+axiosApi.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  (error) => {
+    if (error && error.response && error.response.status === 401) {
+      localStorage?.clear();
+    }
+    return Promise.reject(error);
+  }
+);
 
 export const handleMultipart = (data: any) => {
   return axiosApi.post(`/upload`, data, {
