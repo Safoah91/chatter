@@ -27,7 +27,7 @@ export default class AuthLayout extends Component<PropsType, {}> {
           </section>
           <section className="w-4/6 pl-48 pr-28 pt-8 overflow-x-hidden overflow-y-hidden">
             {/* <div className="-ml-36 flex gap-3 justify-center items-center"> */}
-            <div className="-ml-36">
+            <div className="w-0 -ml-36">
               <Link to="/">
                 <BsArrowLeft
                   size={40}
