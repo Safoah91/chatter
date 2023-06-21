@@ -9,9 +9,43 @@ import Blogs from "pages/blogs";
 import AboutUs from "pages/aboutUs";
 import Confirmation from "pages/auth/confirmation";
 import MainLayout from "./mainlayout";
+import Dashboard from "pages/main/dashboard";
+import Bookmarks from "pages/main/bookmarks";
+import Drafts from "pages/main/drafts";
+import Analytics from "pages/main/analytics";
+import Accounts from "pages/main/accounts";
 
 const router = createBrowserRouter([
-  { path: "/main", element: <MainLayout />, children: [{}] },
+  {
+    path: "/main",
+    element: <MainLayout />,
+    children: [
+      {
+        path: "/main",
+        element: <Dashboard />,
+      },
+      {
+        path: "/main/blogs",
+        element: <Blogs />,
+      },
+      {
+        path: "/main/bookmarks",
+        element: <Bookmarks />,
+      },
+      {
+        path: "/main/drafts",
+        element: <Drafts />,
+      },
+      {
+        path: "/main/analytics",
+        element: <Analytics />,
+      },
+      {
+        path: "/main/accounts",
+        element: <Accounts />,
+      },
+    ],
+  },
 
   {
     path: "/",
