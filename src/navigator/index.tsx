@@ -7,9 +7,12 @@ import Layout from "./layout";
 import Contact from "pages/contact";
 import Blogs from "pages/blogs";
 import AboutUs from "pages/aboutUs";
+import Confirmation from "pages/auth/confirmation";
+import MainLayout from "./mainlayout";
 
 const router = createBrowserRouter([
-  {},
+  { path: "/main", element: <MainLayout />, children: [{}] },
+
   {
     path: "/",
     element: <Layout />,
@@ -39,6 +42,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/confirmation",
+    element: <Confirmation />,
   },
 ]);
 
