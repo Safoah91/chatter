@@ -57,6 +57,7 @@ const trending = [
   {
     name: "Politics",
     href: "/politics",
+    count: 4,
   },
 ];
 
@@ -103,9 +104,8 @@ const MainLayout = () => {
                       Overview
                     </li>
                     {overview.map((item) => (
-                      <li>
+                      <li key={item.name}>
                         <Link
-                          key={item.name}
                           to={item.href}
                           className={
                             location.pathname === item.href
@@ -131,9 +131,8 @@ const MainLayout = () => {
                       Trending Tags
                     </li>
                     {trending.map((item) => (
-                      <li>
+                      <li key={item.name}>
                         <Link
-                          key={item.name}
                           to={item.href}
                           className={
                             location.pathname === item.href
@@ -152,9 +151,8 @@ const MainLayout = () => {
                     </li>
                     {personal.map((item) => (
                       <>
-                        <li>
+                        <li key={item.name}>
                           <Link
-                            key={item.name}
                             to={item.href}
                             className={
                               location.pathname === item.href
@@ -207,7 +205,10 @@ const MainLayout = () => {
               </button>
             </div>
             <main className="flex-1">
-              <div className="py-6 ">
+              <div className="border-b border-b-gray-200 py-8 px-8">
+                <div>Search</div>
+              </div>
+              <div className="py-6 px-8">
                 <Outlet />
               </div>
             </main>

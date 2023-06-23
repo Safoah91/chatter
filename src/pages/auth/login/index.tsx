@@ -6,6 +6,7 @@ import { useMutation } from "react-query";
 import { loginUser } from "api/mutations/users";
 import { toast } from "react-toastify";
 import Cookies from "js-cookie";
+import jwt_decode from "jwt-decode";
 
 const Login: FC<{}> = () => {
   const [loginData, setLoginData] = useState<any>({});
@@ -22,9 +23,12 @@ const Login: FC<{}> = () => {
     mutationFn: (body: any) => loginUser(body),
     onSuccess: (response) => {
       toast?.success("Welcome again!");
-      Cookies.set("accessToken", response.token);
+      const userToken: any = jwt_decode(response?.token);
+      Cookies.set("accessToken", response?.token);
+      Cookies.set("userToken", JSON.stringify(userToken));
       navigate("/main");
     },
+
     onError: (e: any) => {
       console.log(e);
       toast?.error("Email and password wrong");

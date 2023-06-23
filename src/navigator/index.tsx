@@ -5,7 +5,7 @@ import { FC } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Layout from "./layout";
 import Contact from "pages/contact";
-import Blogs from "pages/blogs";
+import Blogs from "pages/main/blogs";
 import AboutUs from "pages/aboutUs";
 import Confirmation from "pages/auth/confirmation";
 import MainLayout from "./mainlayout";
