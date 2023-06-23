@@ -12,7 +12,7 @@ const Button = ({ text, type, link, onClick }: ButtonProps) => {
           {text}
         </button>
       ) : type === "secondary" ? (
-        <button className="border border-blue500 rounded-md text-base font-bold px-8 py-2.5 hover:bg-blue500 hover:text-white transition-all duration-300">
+        <button className="w-full border border-blue500 rounded-md text-base font-bold px-8 py-2.5 hover:bg-gray-100 text-blue500 transition-all duration-300">
           {text}
         </button>
       ) : type === "primary-link" ? (
