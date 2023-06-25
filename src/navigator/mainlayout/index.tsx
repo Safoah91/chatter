@@ -83,6 +83,7 @@ const MainLayout = () => {
 
   const handleLogout = () => {
     Cookies.remove("accessToken");
+    Cookies.remove("user");
     toast?.success("User logged out!");
     navigate("/");
   };
