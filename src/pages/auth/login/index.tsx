@@ -5,11 +5,13 @@ import { useNavigate } from "react-router-dom";
 import { useMutation } from "react-query";
 import { loginUser } from "api/mutations/users";
 import { toast } from "react-toastify";
-import Cookies from "js-cookie";
 import jwt_decode from "jwt-decode";
+import { useCookies } from "react-cookie";
 
 const Login: FC<{}> = () => {
   const [loginData, setLoginData] = useState<any>({});
+  const [, setCookie] = useCookies(['accessToken'])
+  const [, setUserCookie] = useCookies(['user'])
   const navigate = useNavigate();
 
   const handleChange = (e: any) => {
@@ -23,9 +25,9 @@ const Login: FC<{}> = () => {
     mutationFn: (body: any) => loginUser(body),
     onSuccess: (response) => {
       toast?.success("Welcome again!");
-      const userToken: any = jwt_decode(response?.token);
-      Cookies.set("accessToken", response?.token);
-      Cookies.set("userToken", JSON.stringify(userToken));
+      const user = jwt_decode(response?.token);
+      setCookie('accessToken', response?.token)
+      setUserCookie('user', JSON.stringify(user))
       navigate("/main");
     },
 
