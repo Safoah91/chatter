@@ -14,6 +14,7 @@ import Bookmarks from "pages/main/bookmarks";
 import Drafts from "pages/main/drafts";
 import Analytics from "pages/main/analytics";
 import Accounts from "pages/main/accounts";
+import CreateBlog from "pages/main/blogs/components/create";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/main/blogs",
         element: <Blogs />,
+      },
+      {
+        path: "/main/blogs/create",
+        element: <CreateBlog />,
       },
       {
         path: "/main/bookmarks",
