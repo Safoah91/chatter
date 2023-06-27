@@ -9,11 +9,12 @@ import Blogs from "pages/main/blogs";
 import AboutUs from "pages/aboutUs";
 import Confirmation from "pages/auth/confirmation";
 import MainLayout from "./mainlayout";
-import Dashboard from "pages/main/dashboard";
 import Bookmarks from "pages/main/bookmarks";
 import Drafts from "pages/main/drafts";
 import Analytics from "pages/main/analytics";
 import Accounts from "pages/main/accounts";
+// import CreateBlog from "pages/main/blogs/components/create";
+import Blog from "pages/main/blogs/components/blog";
 import CreateBlog from "pages/main/blogs/components/create";
 
 const router = createBrowserRouter([
@@ -22,12 +23,12 @@ const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       {
-        path: "/main",
-        element: <Dashboard />,
+        path: "/main/",
+        element: <Blogs />,
       },
       {
-        path: "/main/blogs",
-        element: <Blogs />,
+        path: "/main/blogs/blog/:id",
+        element: <Blog />,
       },
       {
         path: "/main/blogs/create",

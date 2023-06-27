@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { MdOutlinePostAdd, MdOutlineAnalytics } from "react-icons/md";
-import { HiOutlineHome } from "react-icons/hi";
 import { HiOutlinePower } from "react-icons/hi2";
 import { BsBookmarks, BsEnvelopeOpen } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
@@ -10,14 +9,9 @@ import { toast } from "react-toastify";
 
 const overview = [
   {
-    name: "Dashboard",
-    icon: HiOutlineHome,
-    href: "/main",
-  },
-  {
     name: "Blogs",
     icon: MdOutlinePostAdd,
-    href: "/main/blogs",
+    href: "/main",
     count: 3,
   },
   {
