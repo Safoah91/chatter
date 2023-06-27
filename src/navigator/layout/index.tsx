@@ -35,7 +35,7 @@ const Layout = () => {
             <li>
               <Link
                 to="/blogs"
-                className="text-base  px-4 py-2 font-bold hover:text-gray-500 transition-all duration-300"
+                className="text-base px-4 py-2 font-bold hover:text-gray-500 transition-all duration-300"
               >
                 Blogs
               </Link>
@@ -43,7 +43,7 @@ const Layout = () => {
           </ul>
           <div className="flex gap-5">
             <Button type="secondary-link" text="Log in" link="/login" />
-            <Button type="primary-link" text="Sing up" link="/register" />
+            <Button type="primary-link" text="Sign up" link="/register" />
           </div>
         </nav>
       </header>
