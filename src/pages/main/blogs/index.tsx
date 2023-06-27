@@ -1,17 +1,13 @@
 import { useQuery } from 'react-query';
 import { get } from 'api';
-// import { Link } from 'react-router-dom';
 import Button from 'components/button';
-// import parse from 'html-react-parser';
 import { BsBook } from 'react-icons/bs';
-// import { useCookies } from 'react-cookie';
-
+import { Link } from 'react-router-dom';
 const Blogs = () => {
-  // const [{user}] = useCookies(['user'])
+  const { data, isFetching } = useQuery(['listBlogs'], () =>
+    get(`/blogs/user-blogs`)
+  );
 
-  const { data, isFetching } = useQuery(['listBlogs'], () => get(`/blogs/user-blogs`));
-
-  console.log(data)
   return (
     <>
       <div className='border border-gray-300 rounded-md px-24 py-8 space-y-8'>
@@ -44,9 +40,10 @@ const Blogs = () => {
                     <BsBook />
                     <span>{blog?.readTime} read</span>
                   </p>
-                  <p className='text-gray-500 mt-3'>{blog?.except}</p>
-
-                  {/* <div>{parse(blog?.body)}</div> */}
+                  <p className='text-gray-500 my-3'>{blog?.except}</p>
+                  <Link to={`/main/blogs/blog/${blog?._id}`} className='text-lg text-blue500'>
+                    View more
+                  </Link>
                 </article>
               </div>
             ))
