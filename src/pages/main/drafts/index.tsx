@@ -3,6 +3,7 @@ import { get } from 'api';
 // import { Link } from 'react-router-dom';
 import Button from 'components/button';
 import { BsBook } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 const Drafts = () => {
 
@@ -43,6 +44,9 @@ const Drafts = () => {
                     <span>{blog?.readTime} read</span>
                   </p>
                   <p className='text-gray-500 mt-3'>{blog?.except}</p>
+                  <Link to={`/main/blogs/blog/${blog?._id}`} className='text-lg text-blue500'>
+                    View more
+                  </Link>
                 </article>
               </div>
             ))
