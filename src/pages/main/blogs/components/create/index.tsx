@@ -196,9 +196,6 @@ const CreateBlog = () => {
             </div>
           </div>
           <div className='w-3/4'>
-            <div>
-              <img src={tempUrl} alt='' />
-            </div>
             <div className='w-full my-4'>
               <label
                 className='block text-gray-500 mb-2'
@@ -215,6 +212,9 @@ const CreateBlog = () => {
                 placeholder='eg. 10 mins'
                 className='w-full rounded-md border-gray-300 placeholder:text-gray-300'
               />
+            </div>
+            <div>
+              <img src={tempUrl} alt='' />
             </div>
             <Editor
               onInit={(evt: any, editor: any) => (editorRef.current = editor)}
