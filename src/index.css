@@ -5,6 +5,7 @@
 @tailwind utilities;
 
 body {
+  box-sizing: border-box;
   overflow-x: hidden;
   font-family: 'DM Sans', sans-serif;
 }
@@ -18,7 +19,6 @@ section#hero {
 
 section#hero #overlay {
   background: #00000065;
-
 }
 
 section#authLayout {
@@ -30,5 +30,4 @@ section#authLayout {
 
 section#authLayout #overlay {
   background: #00000065;
-
 }
