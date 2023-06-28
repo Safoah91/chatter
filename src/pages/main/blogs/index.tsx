@@ -1,9 +1,11 @@
+import {FC} from 'react'
 import { useQuery } from 'react-query';
 import { get } from 'api';
 import Button from 'components/button';
 import { BsBook } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-const Blogs = () => {
+
+const MainBlogs: FC<{}> = () => {
   const { data, isFetching } = useQuery(['listBlogs'], () =>
     get(`/blogs/user-blogs`)
   );
@@ -23,7 +25,7 @@ const Blogs = () => {
               <Button
                 text='Post a content'
                 type='secondary-link'
-                link='/main/blogs/create'
+                link='/main/blogs/blog/create'
               />
             </div>
           </section>
@@ -54,4 +56,4 @@ const Blogs = () => {
   );
 };
 
-export default Blogs;
+export default MainBlogs;
