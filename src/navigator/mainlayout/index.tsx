@@ -33,27 +33,27 @@ const overview = [
   },
 ];
 
-const trending = [
-  {
-    name: "Programming",
-    href: "/programming",
-  },
-  {
-    name: "Data science",
-    href: "/data-science",
-    count: 3,
-  },
-  {
-    name: "Technology",
-    href: "/technology",
-    count: 4,
-  },
-  {
-    name: "Politics",
-    href: "/politics",
-    count: 4,
-  },
-];
+// const trending = [
+//   {
+//     name: "Programming",
+//     href: "/programming",
+//   },
+//   {
+//     name: "Data science",
+//     href: "/data-science",
+//     count: 3,
+//   },
+//   {
+//     name: "Technology",
+//     href: "/technology",
+//     count: 4,
+//   },
+//   {
+//     name: "Politics",
+//     href: "/politics",
+//     count: 4,
+//   },
+// ];
 
 const personal = [
   {
@@ -121,7 +121,7 @@ const MainLayout = () => {
                       </li>
                     ))}
                   </ul>
-                  <ul className="ml-3">
+                  {/* <ul className="ml-3">
                     <li className="text-xl mb-3 font-medium text-gray-700">
                       Trending Tags
                     </li>
@@ -139,7 +139,7 @@ const MainLayout = () => {
                         </Link>
                       </li>
                     ))}
-                  </ul>
+                  </ul> */}
                   <ul className="ml-3">
                     <li className="text-xl mb-3 font-medium text-gray-700">
                       Personal
