@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import parse from 'html-react-parser';
 import { FC, useEffect, useState } from 'react';
 import moment from 'moment';
-import { getSingleUserBlog } from 'api/queries';
+import { getSingleBlog } from 'api/queries';
 
 const Blog: FC<{}> = () => {
   const [blogData, setBlogData] = useState<any>(null);
@@ -13,7 +13,7 @@ const Blog: FC<{}> = () => {
 
   const { isFetching } = useQuery(
     ['singleBlog', blogID],
-    () => getSingleUserBlog({ params: { id: blogID } }),
+    () => getSingleBlog({ params: { id: blogID } }),
     {
       onSuccess: (data) => setBlogData(data),
     }
