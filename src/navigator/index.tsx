@@ -5,7 +5,8 @@ import { FC } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Layout from "./layout";
 import Contact from "pages/contact";
-import Blogs from "pages/main/blogs";
+import Blogs from "pages/blogs";
+import Blog from "pages/blogs/components/blog"
 import AboutUs from "pages/aboutUs";
 import Confirmation from "pages/auth/confirmation";
 import MainLayout from "./mainlayout";
@@ -13,9 +14,10 @@ import Bookmarks from "pages/main/bookmarks";
 import Drafts from "pages/main/drafts";
 import Analytics from "pages/main/analytics";
 import Accounts from "pages/main/accounts";
-// import CreateBlog from "pages/main/blogs/components/create";
-import Blog from "pages/main/blogs/components/blog";
 import CreateBlog from "pages/main/blogs/components/create";
+import UpdateBlog from "pages/main/blogs/components/update";
+import MainBlogs from "pages/main/blogs";
+import MainBlog from "pages/main/blogs/components/blog";
 
 const router = createBrowserRouter([
   {
@@ -24,15 +26,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/main/",
-        element: <Blogs />,
+        element: <MainBlogs />,
       },
       {
         path: "/main/blogs/blog/:id",
-        element: <Blog />,
+        element: <MainBlog />,
       },
       {
-        path: "/main/blogs/create",
+        path: "/main/blogs/blog/create",
         element: <CreateBlog />,
+      },
+      {
+        path: "/main/blogs/blog/update/:id",
+        element: <UpdateBlog />,
       },
       {
         path: "/main/bookmarks",
@@ -52,7 +58,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-
   {
     path: "/",
     element: <Layout />,
@@ -72,6 +77,10 @@ const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs />,
+      },
+      {
+        path: "/blogs/blog/:id",
+        element: <Blog />,
       },
     ],
   },
