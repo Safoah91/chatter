@@ -12,7 +12,7 @@ const MainBlog = () => {
   const param = useParams();
 
   const { isFetching } = useQuery(
-    ['singleBlog', blogID],
+    ['singleUserBlog', blogID],
     () => getSingleUserBlog({ params: { id: blogID } }),
     {
       onSuccess: (data) => setBlogData(data),
