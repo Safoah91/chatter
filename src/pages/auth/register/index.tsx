@@ -12,7 +12,8 @@ import { signInWithPopup } from "firebase/auth";
 
 const Register: FC<{}> = () => {
   const [registerData, setRegisterData] = useState<any>({});
-  const [, setValue] = useState<any>();
+  const [value, setValue] = useState<any>();
+  const [data, setData] = useState<any>();
   const navigate = useNavigate();
 
   const handleChange = (e: any) => {
@@ -84,13 +85,16 @@ const Register: FC<{}> = () => {
   const handleClick = () => {
     signInWithPopup(auth, provider).then((data: any) => {
       setValue(data?.user?.email);
-      localStorage.setItem("email", data?.user?.email);
-      navigate("/main");
+      setData(data?.user?.uid);
+      localStorage.setItem("googleAuthUserEmail", data?.user?.email);
+      localStorage.setItem("googleAuthUserID", data?.user?.uid);
+      navigate("/login");
     });
   };
 
   useEffect(() => {
-    setValue(localStorage.getItem("email"));
+    setValue(localStorage.getItem("googleAuthUserEmail"));
+    setData(localStorage.getItem("googleAuthUserID"));
   }, []);
 
   return (
