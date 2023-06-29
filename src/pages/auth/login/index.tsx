@@ -10,8 +10,8 @@ import { useCookies } from "react-cookie";
 
 const Login: FC<{}> = () => {
   const [loginData, setLoginData] = useState<any>({});
-  const [, setCookie] = useCookies(['accessToken'])
-  const [, setUserCookie] = useCookies(['user'])
+  const [, setCookie] = useCookies(["accessToken"]);
+  const [, setUserCookie] = useCookies(["user"]);
   const navigate = useNavigate();
 
   const handleChange = (e: any) => {
@@ -26,8 +26,8 @@ const Login: FC<{}> = () => {
     onSuccess: (response) => {
       toast?.success("Welcome again!");
       const user = jwt_decode(response?.token);
-      setCookie('accessToken', response?.token)
-      setUserCookie('user', JSON.stringify(user))
+      setCookie("accessToken", response?.token);
+      setUserCookie("user", JSON.stringify(user));
       navigate("/main");
     },
 
@@ -70,10 +70,10 @@ const Login: FC<{}> = () => {
           <h2 className="text-3xl font-bold text-center">Welcome back</h2>
           <form
             onSubmit={handleSubmission}
-            className="flex items-center justify-center"
+            className="px-6 md:px-0 flex items-center justify-center"
           >
             <div>
-              <div className="w-[36.7rem] my-6">
+              <div className="w-[20.7rem] md:w-[36.7rem] my-6">
                 <label className="block text-gray-500 mb-3" htmlFor="email">
                   Email address
                 </label>
@@ -86,7 +86,7 @@ const Login: FC<{}> = () => {
                   className="w-full rounded-md border-gray-300 placeholder:text-gray-300"
                 />
               </div>
-              <div className="w-[36.7rem] my-6">
+              <div className="w-[20.7rem] md:w-[36.7rem] my-6">
                 <label className="block text-gray-500 mb-3" htmlFor="password">
                   Password
                 </label>
@@ -99,7 +99,7 @@ const Login: FC<{}> = () => {
                   className="w-full rounded-md border-gray-300 placeholder:text-gray-300"
                 />
               </div>
-              <div className="w-[36.7rem] my-6">
+              <div className="w-[20.7rem] md:w-[36.7rem] my-6">
                 <Button
                   type="primary"
                   text={isLoading ? "logging in..." : "Log in"}

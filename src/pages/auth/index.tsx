@@ -11,7 +11,7 @@ export default class AuthLayout extends Component<PropsType, {}> {
     return (
       <>
         <main className="h-screen w-full flex relative">
-          <section id="authLayout" className="w-2/6">
+          <section id="authLayout" className="sm:hidden md:block md:w-2/6">
             <div
               id="overlay"
               className="px-9 h-screen flex flex-col justify-center"
@@ -25,7 +25,7 @@ export default class AuthLayout extends Component<PropsType, {}> {
               </p>
             </div>
           </section>
-          <section className="w-4/6 pl-48 pr-28 pt-8 overflow-x-hidden overflow-y-hidden">
+          <section className="md:w-4/6 md:pl-48 md:pr-28 pt-8 overflow-x-hidden">
             {/* <div className="-ml-36 flex gap-3 justify-center items-center"> */}
             <div className="w-0 -ml-36">
               <Link to="/">
@@ -36,7 +36,7 @@ export default class AuthLayout extends Component<PropsType, {}> {
               </Link>
               {/* <span className="text-xs">Back</span> */}
             </div>
-            {this.props.children}
+            <div className="">{this.props.children}</div>
           </section>
         </main>
       </>

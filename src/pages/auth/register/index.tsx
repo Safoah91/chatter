@@ -85,6 +85,7 @@ const Register: FC<{}> = () => {
     signInWithPopup(auth, provider).then((data: any) => {
       setValue(data?.user?.email);
       localStorage.setItem("email", data?.user?.email);
+      navigate("/main");
     });
   };
 
@@ -104,8 +105,8 @@ const Register: FC<{}> = () => {
             className="flex items-center justify-center"
           >
             <div>
-              <div className="flex gap-3 my-4">
-                <div className="w-72">
+              <div className="md:flex md:gap-3 my-4">
+                <div className="mb-3 md:mb-0 w-[20.7rem] md:w-72">
                   <label
                     className="block text-gray-500 mb-2"
                     htmlFor="firstName"
@@ -122,7 +123,7 @@ const Register: FC<{}> = () => {
                   />
                 </div>
 
-                <div className="w-72">
+                <div className="w-[20.7rem] md:w-72">
                   <label
                     className="block text-gray-500 mb-2"
                     htmlFor="lastName"
@@ -139,7 +140,7 @@ const Register: FC<{}> = () => {
                   />
                 </div>
               </div>
-              <div className="w-[36.7rem]">
+              <div className="w-[20.7rem] md:w-[36.7rem]">
                 <label className="block text-gray-500 mb-2" htmlFor="joinAs">
                   You are joining as?
                 </label>
@@ -156,7 +157,7 @@ const Register: FC<{}> = () => {
                 </select>
               </div>
 
-              <div className="w-[36.7rem] my-4">
+              <div className="w-[20.7rem] md:w-[36.7rem] my-4">
                 <label className="block text-gray-500 mb-2" htmlFor="email">
                   Email address
                 </label>
@@ -169,7 +170,7 @@ const Register: FC<{}> = () => {
                   className="w-full rounded-md border-gray-300 placeholder:text-gray-300"
                 />
               </div>
-              <div className="w-[36.7rem] my-4">
+              <div className="w-[20.7rem] md:w-[36.7rem] my-4">
                 <label className="block text-gray-500 mb-2" htmlFor="password">
                   Password
                 </label>
@@ -182,7 +183,7 @@ const Register: FC<{}> = () => {
                   className="w-full rounded-md border-gray-300 placeholder:text-gray-300"
                 />
               </div>
-              <div className="w-[36.7rem] my-4">
+              <div className="w-[20.7rem] md:w-[36.7rem] my-4">
                 <label
                   className="block text-gray-500 mb-2"
                   htmlFor="confirmPassword"
@@ -198,14 +199,14 @@ const Register: FC<{}> = () => {
                   className="w-full rounded-md border-gray-300 placeholder:text-gray-300"
                 />
               </div>
-              <div className="w-[36.7rem] mt-6 mb-4">
+              <div className="w-[20.7rem] md:w-[36.7rem] mt-6 mb-4">
                 <Button
                   type="primary"
                   onClick={handleSubmission}
                   text={isLoading ? "Creating..." : "Create account"}
                 />
               </div>
-              <div className="w-[36.7rem] my-4">
+              <div className="w-[20.7rem] md:w-[36.7rem] my-4">
                 <div
                   className="w-full border border-gray-300 text-gray-600 rounded-md text-base font-normal px-8 py-2.5 hover:text-gray-700 transition-all duration-300 flex justify-center items-center gap-3 hover:border-gray-400 hover:cursor-pointer"
                   onClick={handleClick}
@@ -214,7 +215,7 @@ const Register: FC<{}> = () => {
                   <span className="text-base">Sign up with google</span>
                 </div>
               </div>
-              <div className="w-[36.7rem] my-4">
+              <div className="w-[20.7rem] md:w-[36.7rem] my-4">
                 <div className="w-full border border-gray-300 text-gray-600 rounded-md text-base font-normal px-8 py-2.5 hover:text-gray-700 transition-all duration-300 flex justify-center items-center gap-3 hover:border-gray-400 hover:cursor-pointer">
                   <BsLinkedin size={23} fill="#0077B7" className="" />
                   <span className="text-base">Sign up with Linkedin</span>
