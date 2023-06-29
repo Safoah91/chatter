@@ -3,12 +3,12 @@ import { getStorage } from "firebase/storage";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBVIXYB37F-P2cAQ4jbaLS-ZQAcSW7i5_M",
-  authDomain: "catter-a2276.firebaseapp.com",
-  projectId: "catter-a2276",
-  storageBucket: "catter-a2276.appspot.com",
-  messagingSenderId: "438111096047",
-  appId: "1:438111096047:web:4fd0d8592955b2a988df1a",
+  apiKey: "AIzaSyDx3eInlDGUV1vZel3LRj1UvhPGEQy-9VA",
+  authDomain: "chatter-sapp.firebaseapp.com",
+  projectId: "chatter-sapp",
+  storageBucket: "chatter-sapp.appspot.com",
+  messagingSenderId: "47800540363",
+  appId: "1:47800540363:web:45f1f46aa74396eebf8f4e",
 };
 
 // Initialize Firebase
