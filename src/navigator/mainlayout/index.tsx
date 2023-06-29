@@ -68,23 +68,35 @@ const MainLayout = () => {
   const location = useLocation();
   const token = Cookies.get("accessToken");
   const navigate = useNavigate();
+  const [value, setValue] = useState<any>();
+  const [data, setData] = useState<any>();
 
   useEffect(() => {
-    if (!token) {
+    setValue(localStorage.getItem("googleAuthUserEmail"));
+    setData(localStorage.getItem("googleAuthUserID"));
+  }, []);
+
+  useEffect(() => {
+    if (!token || (!value && !data)) {
       navigate("/");
     }
-  }, [navigate, token]);
+  }, [navigate, token, value, data]);
 
   const handleLogout = () => {
     Cookies.remove("accessToken");
     Cookies.remove("user");
+    localStorage.removeItem("googleAuthUserEmail");
+    localStorage.removeItem("googleAuthUserID");
     toast?.success("User logged out!");
     navigate("/");
   };
 
+  console.log(value);
+  console.log(data);
+
   return (
     <>
-      {token && (
+      {token || (value && data) ? (
         <div>
           <div className="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
             {/* Sidebar component, swap this element with another sidebar if you like */}
@@ -122,24 +134,24 @@ const MainLayout = () => {
                     ))}
                   </ul>
                   {/* <ul className="ml-3">
-                    <li className="text-xl mb-3 font-medium text-gray-700">
-                      Trending Tags
-                    </li>
-                    {trending.map((item) => (
-                      <li key={item.name}>
-                        <Link
-                          to={item.href}
-                          className={
-                            location.pathname === item.href
-                              ? "bg-blue500 text-blue500 group flex items-center px-2 py-2 text-sm font-medium rounded-md"
-                              : "text-gray-500 hover:bg-blue500 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
-                          }
-                        >
-                          {item.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul> */}
+           <li className="text-xl mb-3 font-medium text-gray-700">
+             Trending Tags
+           </li>
+           {trending.map((item) => (
+             <li key={item.name}>
+               <Link
+                 to={item.href}
+                 className={
+                   location.pathname === item.href
+                     ? "bg-blue500 text-blue500 group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                     : "text-gray-500 hover:bg-blue500 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                 }
+               >
+                 {item.name}
+               </Link>
+             </li>
+           ))}
+         </ul> */}
                   <ul className="ml-3">
                     <li className="text-xl mb-3 font-medium text-gray-700">
                       Personal
@@ -209,6 +221,8 @@ const MainLayout = () => {
             </main>
           </div>
         </div>
+      ) : (
+        ""
       )}
     </>
   );
